@@ -40,8 +40,4 @@ def test_instance_explanation(get_data, classifier):
     with pytest.raises(Exception, match=r"distance should be either  'L1' or 'L2'. The value of type was: L3"):
         explainer.explain_instance(instance=['To be explained'], predict_function=classifier, distance='L3',
                                    class_index=0)
-
-
-
-
-    explainer = Explainer(get_data.loc[:, 'Sentence'])
+        
