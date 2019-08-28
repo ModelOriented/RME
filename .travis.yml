@@ -4,6 +4,7 @@ python:
 install:
   - pip install .
   - pip install codecov
+  - pip install pytest-cov
 script:
   - pytest --cov-report term --cov=RME tests/
 after_success:
