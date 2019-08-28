@@ -2,7 +2,7 @@ import pytest
 import pandas as pd
 import sklearn
 import sklearn.linear_model
-from explainer import Explainer
+from RME.explainer import Explainer
 from sklearn.feature_extraction.text import CountVectorizer
 
 
