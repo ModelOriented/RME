@@ -3,5 +3,8 @@ python:
   - '3.7'
 install:
   - pip install .
+  - pip install codecov
 script:
-  - pytest RME
+  - pytest --cov-report term --cov=RME tests/
+after_success:
+  - codecov
