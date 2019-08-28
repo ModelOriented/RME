@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 @pytest.fixture
 def get_data():
-    data = pd.read_csv('test_set.csv', sep=';')
+    data = pd.read_csv('tests\test_set.csv', sep=';')
     return data
 
 @pytest.fixture
