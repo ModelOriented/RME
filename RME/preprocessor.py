@@ -62,9 +62,3 @@ class Instance(object):
             perturbations = [linking_char.join(perturbation) for perturbation in perturbed]
 
         return perturbations
-
-    def remove_time_step(self, time_step_id, substitution_char='_', linking_char=','):
-
-        removed = self.perturbations([substitution_char], time_step_id, linking_char)
-
-        return removed

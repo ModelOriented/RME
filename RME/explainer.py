@@ -88,24 +88,3 @@ class Explainer(object):
 
     def plot_partial_predictions(self, **kwargs):
         plots.plot_partial_predictions(self, **kwargs)
-
-
-class GlobalExplainer(object):
-
-    def __init__(self, train_set):
-        self.train_set = train_set
-        self.explainer = Explainer(self.train_set)
-        self.variances = []
-        self.time_steps = []
-
-    def explain_train_set(self, classifier_function, distance='L1', class_index=0):
-
-        no_of_observations = len(self.train_set)
-        for i, instance in enumerate(self.train_set):
-            self.explainer.explain_instance([instance], classifier_function, distance, class_index)
-            self.variances.append(self.explainer.variances)
-            print('Explained instances: ' + str(i) + ' of ' + str(no_of_observations) + ' ' + '[' + '=' * int(
-                round(30 * (i / no_of_observations), 0)) + '>' + '-' *
-                int(round(30 * ((no_of_observations - i) / no_of_observations), 0)) + ']', end='\r')
-
-        self.time_steps = [len(variances) for variances in self.variances]
