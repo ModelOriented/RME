@@ -10,6 +10,7 @@ setup(
         'scikit-learn'
     ],
     packages=find_packages(),
+    include_package_data=True,
     url='',
     license='',
     author='Mateusz Kobylka',
