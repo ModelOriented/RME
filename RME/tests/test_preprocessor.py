@@ -1,4 +1,4 @@
-from preprocessor import Instance
+from RME.preprocessor import Instance
 
 
 def test_time_steps_split():
