@@ -1,0 +1,2 @@
+ignore:
+  - "[a-z]+/test_.*"  
