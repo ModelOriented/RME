@@ -6,11 +6,11 @@ import sklearn.linear_model
 from RME.explainer import Explainer
 from sklearn.feature_extraction.text import CountVectorizer
 
-print(os.getcwd())
 
 @pytest.fixture
 def get_data():
-    data = pd.read_csv('tests\test_set.csv', sep=';')
+    test_file_directory = (os.path.dirname(__file__))+"/test_set.csv"
+    data = pd.read_csv(test_file_directory, sep=';')
     return data
 
 @pytest.fixture
