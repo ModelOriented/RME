@@ -7,6 +7,6 @@ install:
   - pip install codecov
   - pip install pytest-cov
 script:
-  - pytest --cov=RME
+  - pytest --pyargs RME --cov=RME
 after_success:
   - codecov
