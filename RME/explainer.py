@@ -1,5 +1,5 @@
-import preprocessor
-import plots
+from . import preprocessor
+from . import plots
 import numpy as np
 
 
