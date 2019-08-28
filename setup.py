@@ -9,8 +9,7 @@ setup(
         'matplotlib',
         'scikit-learn'
     ],
-    package_dir={'': 'RME'},
-    packages=find_packages('RME'),
+    packages= find_packages(exclude=['tests']),
     include_package_data=True,
     url='https://github.com/kobylkam/RME',
     license='',
