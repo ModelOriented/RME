@@ -11,7 +11,7 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    url='',
+    url='https://github.com/kobylkam/RME',
     license='',
     author='Mateusz Kobylka',
     author_email='kobylkam95@gmail.com',
