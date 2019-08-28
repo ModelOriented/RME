@@ -9,6 +9,7 @@ setup(
         'matplotlib',
         'scikit-learn'
     ],
+    packages=['preprocessor','explainer','plots'],
     url='',
     license='',
     author='Mateusz Kobylka',
