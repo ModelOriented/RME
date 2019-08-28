@@ -1,3 +1,4 @@
+import os
 import pytest
 import pandas as pd
 import sklearn
@@ -5,6 +6,7 @@ import sklearn.linear_model
 from RME.explainer import Explainer
 from sklearn.feature_extraction.text import CountVectorizer
 
+print(os.getcwd())
 
 @pytest.fixture
 def get_data():
