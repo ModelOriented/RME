@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages()
 
 setup(
     name='RME',
@@ -9,7 +9,7 @@ setup(
         'matplotlib',
         'scikit-learn'
     ],
-    packages=['preprocessor','explainer','plots'],
+    packages=find_packages(),
     url='',
     license='',
     author='Mateusz Kobylka',
