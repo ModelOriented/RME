@@ -10,7 +10,7 @@ setup(
         'scikit-learn'
     ],
     packages= find_packages(exclude=['tests']),
-    py_modules=['preprocessor','plots','explainer']
+    py_modules=['preprocessor','plots','explainer'],
     include_package_data=True,
     url='https://github.com/kobylkam/RME',
     license='',
