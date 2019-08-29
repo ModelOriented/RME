@@ -21,8 +21,6 @@ def plot_local_perturbations(explainer, type='probabilities', show_mean=True, pl
     else:
         plot_data = explainer.probability_change.T
         mean_data = explainer.mean_change
-        if title == 'Probabilities for ':
-            title = 'Probability changes for '
 
     time_steps = explainer.perturbed_probabilities.shape[1]
 
@@ -111,7 +109,7 @@ def plot_partial_predictions(explainer, class_dictionary=None, dpi=72, figsize=(
 def plot_time_step_dispersion(explainer, dispersion_measure='std', dpi=72, figsize=(8,6), title = 'Variance vs time step'):
 
     if dispersion_measure not in ['var', 'std']:
-        raise Exception('dispersion_measure should be either  \'var\' or \'std\'. The value was: {}'.format(type))
+        raise Exception('dispersion_measure should be either \'var\' or \'std\'. The value was: {}'.format(dispersion_measure))
 
     if dispersion_measure == 'var':
         bars = explainer.variances
