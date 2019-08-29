@@ -50,6 +50,7 @@ After explaining the instance, the module is ready to visualize obtained results
 ```{python}
 e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
 ```
+![](docs/REAMDE files/demo_profiles.png)
 
 ```{python}
 e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
