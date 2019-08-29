@@ -50,11 +50,12 @@ After explaining the instance, the module is ready to visualize obtained results
 ```{python}
 e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
 ```
-![](docs/README_files/demo_profiles.png)
+<img src="docs/README_files/demo_profiles.png" width="500">
 
 ```{python}
 e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
 ```
+<img src="docs/README_files/demo_scores.png" width="500">
 
 Once the explainer is constructed, it can serve for various instances. Below, the RME visualizes the impact of the following words on negative sentiment prediction for the sentence: *It was the worst and most boring movie I have ever seen*.
 
