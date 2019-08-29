@@ -102,6 +102,9 @@ def test_plot_partial_predictions(get_data, classifier):
 
     explainer.step_by_step_prediction(instance=['Negative'], predict_function=classifier)
     explainer.plot_partial_predictions()
+    
+    explainer.step_by_step_prediction(instance=['This sentence is getting positive'], predict_function=classifier)
+    explainer.plot_partial_predictions()
 
 
 def test_plot_time_step_dispersion(get_data, classifier):
