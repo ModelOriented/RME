@@ -108,37 +108,6 @@ def plot_partial_predictions(explainer, class_dictionary=None, dpi=72, figsize=(
     fig.tight_layout()
 
 
-def plot_single_perturbation(explainer, perturbation, type='probabilities', show_mean=False,
-                             dpi=72, figsize=(8, 6), title='Probabilities for '):
-
-    if type not in ['probabilities', 'probability_change']:
-        raise Exception('type should be either  \'probabilities\' or \'probability_change\'. The value of type was: {}'.format(type))
-
-    time_steps = explainer.probability_change.shape[1]
-    perturbation_index = explainer.vocabulary.index(perturbation)
-
-    if type == 'probabilities':
-        plot_data = explainer.perturbed_probabilities.T[:, [perturbation_index]]
-        mean_data = explainer.mean_absolute
-    else:
-        plot_data = explainer.probability_change.T[:, [perturbation_index]]
-        mean_data = explainer.mean_change
-        if title == 'Probabilities for ':
-            title = 'Probability changes for '
-
-    fig, ax = plt.subplots(dpi=dpi, figsize=figsize)
-    ax.plot(range(time_steps),
-            plot_data, lw=2, color='indigo')
-
-    if show_mean:
-        ax.plot(range(time_steps), mean_data, color='red', lw=2)
-
-    ax.set_title(title + perturbation)
-    ax.set_xticks(range(time_steps))
-    ax.set_xticklabels(range(1, time_steps + 1))
-    fig.tight_layout()
-
-
 def plot_time_step_dispersion(explainer, dispersion_measure='std', dpi=72, figsize=(8,6), title = 'Variance vs time step'):
 
     if dispersion_measure not in ['var', 'std']:
