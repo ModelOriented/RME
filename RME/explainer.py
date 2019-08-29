@@ -11,13 +11,13 @@ class Explainer(object):
             self.vocabulary = self.get_vocabulary()
         else:
             self.vocabulary = vocabulary
-        self.time_steps = []
+        self.time_steps = np.array([])
         self.perturbed_probabilities = np.array([])
         self.probability_change = np.array([])
         self.variances = np.array([])
-        self.mean_absolute = 0
-        self.mean_change = 0
-        self.partial_predictions = []
+        self.mean_absolute = np.array([])
+        self.mean_change = np.array([])
+        self.partial_predictions = np.array([])
         self.instance_value = 0
 
     def get_vocabulary(self):
