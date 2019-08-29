@@ -62,3 +62,32 @@ def test_step_by_step_prediction(get_data, classifier):
 
     assert all([obtained == expected for obtained, expected
                 in zip(explainer.partial_predictions, [0, 1])])
+
+
+def test_plot_local_perturbations(get_data, classifier):
+
+    explainer = Explainer(get_data.loc[:, 'Sentence'], vocabulary=['this', 'is', 'positive', 'negative',
+                                                                   'sentence', 'review', 'comments'])
+
+    explainer.explain_instance(instance=['To be explained'], predict_function=classifier, distance='L1', class_index=0)
+
+    explainer.plot_local_perturbations(type='probabilities', show_mean=True, plot_type='profiles', highlights=None,
+                                       title='Test plot - memory profiles')
+    explainer.plot_local_perturbations(type='probability_change', show_mean=True, plot_type='profiles', highlights=None,
+                                       title='Test plot - adjusted memory profiles', y_lim=(0, 1))
+    explainer.plot_local_perturbations(type='probability_change', show_mean=True, plot_type='scores', highlights=None,
+                                       title='Test plot - memory scores with AMP', order_time_steps = True)
+    explainer.plot_local_perturbations(type='probability_change', show_mean=False, plot_type='scores', highlights=None,
+                                       title='Test plot - memory scores without AMP')
+    explainer.plot_local_perturbations(type='probability_change', show_mean=True, plot_type='nothing', highlights=['negative'],
+                                       title='Test plot - memory profile for: negative')
+
+    with pytest.raises(Exception, match=r"type should be either  'probabilities' or 'probability_change'. The value of type was: wrong type"):
+        explainer.plot_local_perturbations(type='wrong type', show_mean=True, plot_type='nothing',
+                                           highlights=['negative'],
+                                           title='Test plot - type exception')
+
+    with pytest.raises(Exception, match=r"plot_type should be either  'profiles', 'scores' or 'nothing'. The value of type was: wrong type"):
+        explainer.plot_local_perturbations(type='probability_change', show_mean=True, plot_type='wrong type',
+                                           highlights=['negative'],
+                                           title='Test plot - plot type exception')
