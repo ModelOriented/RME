@@ -80,9 +80,6 @@ class Explainer(object):
     def plot_local_perturbations(self, **kwargs):
         plots.plot_local_perturbations(self, **kwargs)
 
-    def plot_single_perturbation(self, perturbation, **kwargs):
-        plots.plot_single_perturbation(self, perturbation, **kwargs)
-
     def plot_time_step_dispersion(self, **kwargs):
         plots.plot_time_step_dispersion(self, **kwargs)
 
