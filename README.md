@@ -17,7 +17,7 @@ pip install git+https://github.com/kobylkam/RME
 Demo
 ---------------
 
-A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME demo explanations. Full example can be found in notebooks folder.
+A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME demo explanations. Full code of an example can be found in [notebooks](https://github.com/kobylkam/RME/blob/master/notebooks/Demo_RME.ipynb) folder.
 
 ### 1. Creating an explainer 
 
