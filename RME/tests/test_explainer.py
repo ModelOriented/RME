@@ -69,7 +69,7 @@ def test_plot_local_perturbations(get_data, classifier):
     explainer = Explainer(get_data.loc[:, 'Sentence'], vocabulary=['this', 'is', 'positive', 'negative',
                                                                    'sentence', 'review', 'comments'])
 
-    explainer.explain_instance(instance=['To be explained'], predict_function=classifier, distance='L1', class_index=0)
+    explainer.explain_instance(instance=['To be explained'], predict_function=classifier, distance='L2', class_index=0)
 
     explainer.plot_local_perturbations(type='probabilities', show_mean=True, plot_type='profiles', highlights=None,
                                        title='Test plot - memory profiles')
@@ -91,3 +91,28 @@ def test_plot_local_perturbations(get_data, classifier):
         explainer.plot_local_perturbations(type='probability_change', show_mean=True, plot_type='wrong type',
                                            highlights=['negative'],
                                            title='Test plot - plot type exception')
+        
+
+def test_plot_partial_predictions(get_data, classifier):
+
+    explainer = Explainer(get_data.loc[:, 'Sentence'], vocabulary=['this', 'is', 'positive', 'negative',
+                                                                   'sentence', 'review', 'comments'])
+    explainer.step_by_step_prediction(instance=['Getting positive'], predict_function=classifier)
+    explainer.plot_partial_predictions(class_dictionary={0: 'Negative', 1: 'Positive'} )
+
+    explainer.step_by_step_prediction(instance=['Negative'], predict_function=classifier)
+    explainer.plot_partial_predictions()
+
+
+def test_plot_time_step_dispersion(get_data, classifier):
+
+    explainer = Explainer(get_data.loc[:, 'Sentence'], vocabulary=['this', 'is', 'positive', 'negative',
+                                                                   'sentence', 'review', 'comments'])
+    explainer.explain_instance(instance=['To be explained'], predict_function=classifier, distance='L1', class_index=0)
+
+    explainer.plot_time_step_dispersion(dispersion_measure='std')
+    explainer.plot_time_step_dispersion(dispersion_measure='var')
+
+    with pytest.raises(Exception, match=r"dispersion_measure should be either 'var' or 'std'. The value was: wrong measure"):
+        explainer.plot_time_step_dispersion(dispersion_measure='wrong measure')
+ 
