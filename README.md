@@ -14,10 +14,10 @@ RME can be istalled directly from github using pip:
 pip install git+https://github.com/kobylkam/RME
 </pre>
 
-Usage
+Demo
 ---------------
 
-A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME explanation. Full example can be found in notebooks folder.
+A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME demo explanations. Full example can be found in notebooks folder.
 
 ### 1. Creating an explainer 
 
@@ -57,6 +57,11 @@ e.plot_local_perturbations(type='probability_change', title = 'Demo explanation,
 ```
 <img src="docs/README_files/demo_scores.png" width="500">
 
+```{python}
+e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
+```
+<img src="docs/README_files/demo_step_by_step.png" width="800">
+
 Once the explainer is constructed, it can serve for various instances. Below, the RME visualizes the impact of the following words on negative sentiment prediction for the sentence: *It was the worst and most boring movie I have ever seen*.
 
 ```{python}
@@ -64,6 +69,12 @@ e.explain_instance(instance=['It was the worst movie I have ever seen!'],predict
 e.plot_local_perturbations(type='probability_change', title = 'Demo explanation, class: positive')
 ```
 
+<img src="docs/README_files/demo_another_example.png" width="500">
 
 
+Documentation
+---------------
 
+For all the features the package offers, see the documentation.
+
+The package was created as a part of master's diploma thesis at Warsaw University of Technology at Faculty of Mathematics and Information Science by Mateusz Kobyłka.
