@@ -1,9 +1,0 @@
-site_name: RME 
-nav:
-    - Home: index.md
-    - Documentation: documentation.md
-theme:
-  name: 'material'
-  palette:
-    primary: 'deep purple'
-    accent: 'deep purple'
