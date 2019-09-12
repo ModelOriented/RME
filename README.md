@@ -78,6 +78,6 @@ e.plot_local_perturbations(type='probability_change', title = 'Demo explanation,
 Documentation
 ---------------
 
-For all the features the package offers, see the documentation.
+For all the features the package offers, see the [documentation](https://kobylkam.github.io/RME/documentation/).
 
 The package was created as a part of master's diploma thesis at Warsaw University of Technology at Faculty of Mathematics and Information Science by Mateusz Kobyłka.
