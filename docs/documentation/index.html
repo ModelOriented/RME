@@ -261,9 +261,97 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
+  <a href="#classes" class="md-nav__link">
+    Classes
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explainer" class="md-nav__link">
+    Explainer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explain_instance" class="md-nav__link">
+    explain_instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step_by_step_prediction" class="md-nav__link">
+    step_by_step_prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_local_perturbations" class="md-nav__link">
+    plot_local_perturbations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_time_step_dispersion" class="md-nav__link">
+    plot_time_step_dispersion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_partial_predictions" class="md-nav__link">
+    plot_partial_predictions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -299,9 +387,97 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
+  <a href="#classes" class="md-nav__link">
+    Classes
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explainer" class="md-nav__link">
+    Explainer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explain_instance" class="md-nav__link">
+    explain_instance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step_by_step_prediction" class="md-nav__link">
+    step_by_step_prediction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_local_perturbations" class="md-nav__link">
+    plot_local_perturbations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_time_step_dispersion" class="md-nav__link">
+    plot_time_step_dispersion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot_partial_predictions" class="md-nav__link">
+    plot_partial_predictions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -324,8 +500,96 @@
                   <a href="https://github.com/kobylkam/RME/edit/master/docs/documentation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="rme-documentation">RME - documentation <img src="README_files/drwhy_RME_website.png" align="right" width="150"/></h1>
-<h2 id="functions">Functions</h2>
+                <h1 id="rme-documentation"><strong>RME - documentation</strong> <img src="documentation/README_files/drwhy_RME_website.png" align="right" width="150"/></h1>
+<p>This is a documentation of all available functionalities of RME package. The module consist of one class with two explanation methods and three plot methods so far.</p>
+<h2 id="classes"><strong>Classes</strong></h2>
+<h3 id="explainer"><strong><code>Explainer</code></strong></h3>
+<p>Base class for RME explainer. Each attribute is updated by <code>explain_instance</code> method, except for <code>partial_predictions</code> and initial arguments.</p>
+<h4 id="arguments">Arguments</h4>
+<ul>
+<li><code>train_set</code>: A train set used to construct the model. This set is used
+        to construct <code>vocabulary</code>.</li>
+<li><code>vocabulary</code>: (default None) a set of single time step values used to create
+        perturbations. If not supplied, it is created based on the <code>train_set</code> 
+        via extraction of distinct time step values </li>
+</ul>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li><code>train_set</code> - initial argument</li>
+<li><code>vocabulary</code> - initial argument</li>
+<li><code>time_steps</code> - array with time steps of explained instance, updated by <code>explain instance</code></li>
+<li><code>perturbed_probabilities</code> - array with probabilities per each perturbation at each time step</li>
+<li><code>probability_change</code>- array with the difference between perturbation probability and base probability of the instance per each perturbation at each time step   </li>
+<li><code>variances</code> - variance of probability changes per each time step</li>
+<li><code>mean_absolute</code> - mean of <code>perturbed_probabilities</code> at each time step</li>
+<li><code>mean_change</code> - mean of <code>probability_change</code> at each time step</li>
+<li><code>partial_predictions</code>: class predicted after each time step, updated by <code>step_by_step_prediction</code></li>
+<li><code>instance_value</code>: the probability (score) of the explained instance</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<p>Currently, RME supports recurrent models operating on text data. Example below
+creates a vocabulary from</p>
+<pre><code class="python">from RME.explainer import Explainer
+# First, let's define a train set:
+Sentences = ['This is a good movie', 'This is a bad book', 'It is a wonderful World!']
+
+# Now, let's pass it to the explainer and check the created vocabulary.
+e = Explainer(train_set=Sentences)
+e.vocabulary
+</code></pre>
+
+<h4 id="methods">Methods</h4>
+<h5 id="explain_instance"><span style="font-size:larger;">explain_instance</span></h5>
+<p>Basic method which produces RME explanations.</p>
+<ul>
+<li><code>instance</code> - instance to be explained, e.g.: <code>['Explain this sentence, please!']</code></li>
+<li><code>predict_function</code> - model predict probabilities function </li>
+<li><code>distance='L1'</code> - distance metric for <code>probability_change</code> computation (valid values: <code>'L1'</code>, <code>'L2'</code>)</li>
+<li><code>class_index=0</code> - class to be explained (default 0) </li>
+</ul>
+<p>Returns: Updates <code>perturbed_probabilities</code>, <code>probability_change</code>, <code>variances</code>, <code>mean_absolute</code>, <code>mean_change</code>, <code>instance value</code> attributes.</p>
+<pre><code class="python">#Example 
+
+pass
+</code></pre>
+
+<h5 id="step_by_step_prediction"><span style="font-size:larger;">step_by_step_prediction</span></h5>
+<p>Method which prepares partial predictions.</p>
+<ul>
+<li><code>instance</code> - instance to be prepared partial predictions</li>
+<li><code>predict_function</code> - predict probabilities function that outputs probability per class</li>
+</ul>
+<p>Returns: Updates <code>partial_predictions</code> attribute.</p>
+<pre><code class="python"># Example
+
+pass
+</code></pre>
+
+<h5 id="plot_local_perturbations"><span style="font-size:larger;">plot_local_perturbations</span></h5>
+<p>Method for plotting basic RME explanations.</p>
+<ul>
+<li><code>type='probabilities'</code> - wheter to plot <code>perturbed_probabilities</code> or <code>probability_change</code></li>
+<li><code>show_mean=True</code> - wheter to show average (adjusted) memory profiles or not</li>
+<li><code>plot_type='profiles'</code> - either 'profiles' - plot with memory profiles, 'scores' - plot with memory scores as bars or 'none'</li>
+<li><code>highlights=None</code> - list of vocabulary values to be highlighted, e.g. <code>['This','That']</code></li>
+<li><code>dpi=72</code> - dots per inch (graphic param)</li>
+<li><code>figsize=(8, 6)</code> - figure size (graphic param)</li>
+<li><code>title='Step probabilities and mean'</code> - plot title</li>
+<li><code>order_time_steps = False</code> - if True, time step values are replaced by ordered numbers (starting from 1)</li>
+<li><code>y_lim=None</code> - vertical axis limits: <code>(a,b)</code></li>
+</ul>
+<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
+<pre><code class="python">#Examples
+
+pass
+</code></pre>
+
+<h5 id="plot_time_step_dispersion"><span style="font-size:larger;">plot_time_step_dispersion</span></h5>
+<p>Method for plotting memory scores.</p>
+<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
+<h5 id="plot_partial_predictions"><span style="font-size:larger;">plot_partial_predictions</span></h5>
+<p>Method for plotting partial predictions chart.</p>
+<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
                 
                   
                 
