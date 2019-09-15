@@ -500,8 +500,8 @@
                   <a href="https://github.com/kobylkam/RME/edit/master/docs/documentation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="rme-documentation"><strong>RME - documentation</strong> <img src="documentation/README_files/drwhy_RME_website.png" align="right" width="150"/></h1>
-<p>This is a documentation of all available functionalities of RME package. The module consist of one class with two explanation methods and three plot methods so far.</p>
+                <h1 id="rme-documentation"><strong>RME - documentation</strong></h1>
+<p>This is a documentation of all available functionalities of RME package. The module consist of one class with two explanation methods and three plot methods (so far).</p>
 <h2 id="classes"><strong>Classes</strong></h2>
 <h3 id="explainer"><strong><code>Explainer</code></strong></h3>
 <p>Base class for RME explainer. Each attribute is updated by <code>explain_instance</code> method, except for <code>partial_predictions</code> and initial arguments.</p>
@@ -547,28 +547,18 @@ e.vocabulary
 <li><code>distance='L1'</code> - distance metric for <code>probability_change</code> computation (valid values: <code>'L1'</code>, <code>'L2'</code>)</li>
 <li><code>class_index=0</code> - class to be explained (default 0) </li>
 </ul>
-<p>Returns: Updates <code>perturbed_probabilities</code>, <code>probability_change</code>, <code>variances</code>, <code>mean_absolute</code>, <code>mean_change</code>, <code>instance value</code> attributes.</p>
-<pre><code class="python">#Example 
-
-pass
-</code></pre>
-
+<p><strong>Updates:</strong> <code>perturbed_probabilities</code>, <code>probability_change</code>, <code>variances</code>, <code>mean_absolute</code>, <code>mean_change</code>, <code>instance value</code> attributes.</p>
 <h5 id="step_by_step_prediction"><span style="font-size:larger;">step_by_step_prediction</span></h5>
 <p>Method which prepares partial predictions.</p>
 <ul>
 <li><code>instance</code> - instance to be prepared partial predictions</li>
 <li><code>predict_function</code> - predict probabilities function that outputs probability per class</li>
 </ul>
-<p>Returns: Updates <code>partial_predictions</code> attribute.</p>
-<pre><code class="python"># Example
-
-pass
-</code></pre>
-
+<p><strong>Updates:</strong> <code>partial_predictions</code> attribute.</p>
 <h5 id="plot_local_perturbations"><span style="font-size:larger;">plot_local_perturbations</span></h5>
 <p>Method for plotting basic RME explanations.</p>
 <ul>
-<li><code>type='probabilities'</code> - wheter to plot <code>perturbed_probabilities</code> or <code>probability_change</code></li>
+<li><code>type='probabilities'</code> - whether to plot <code>perturbed_probabilities</code> or <code>probability_change</code></li>
 <li><code>show_mean=True</code> - wheter to show average (adjusted) memory profiles or not</li>
 <li><code>plot_type='profiles'</code> - either 'profiles' - plot with memory profiles, 'scores' - plot with memory scores as bars or 'none'</li>
 <li><code>highlights=None</code> - list of vocabulary values to be highlighted, e.g. <code>['This','That']</code></li>
@@ -578,18 +568,25 @@ pass
 <li><code>order_time_steps = False</code> - if True, time step values are replaced by ordered numbers (starting from 1)</li>
 <li><code>y_lim=None</code> - vertical axis limits: <code>(a,b)</code></li>
 </ul>
-<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
-<pre><code class="python">#Examples
-
-pass
-</code></pre>
-
+<p><strong>Returns</strong>: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
 <h5 id="plot_time_step_dispersion"><span style="font-size:larger;">plot_time_step_dispersion</span></h5>
 <p>Method for plotting memory scores.</p>
-<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
+<ul>
+<li><code>dispersion_measure='std'</code> - whether to plot memory scores (<code>std</code>) or variance of memory profiles (<code>var</code>)</li>
+<li><code>dpi=72</code> - dots per inch (graphic param)</li>
+<li><code>figsize=(8, 6)</code> - figure size (graphic param)</li>
+<li><code>title = 'Variance vs time step'</code> - plot title</li>
+</ul>
+<p><strong>Returns</strong>: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
 <h5 id="plot_partial_predictions"><span style="font-size:larger;">plot_partial_predictions</span></h5>
 <p>Method for plotting partial predictions chart.</p>
-<p>Returns: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
+<ul>
+<li><code>class_dictionary=None</code> - dicitonary with class names</li>
+<li><code>dpi=72</code> - dots per inch (graphic param)</li>
+<li><code>figsize=(8, 6)</code> - figure size (graphic param)</li>
+<li><code>title = 'Prediction progress'</code> - plot title</li>
+</ul>
+<p><strong>Returns</strong>: <a href="https://matplotlib.org/">Matplotlib</a> plot.</p>
                 
                   
                 
