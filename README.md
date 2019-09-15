@@ -14,13 +14,13 @@ Installation
 RME can be istalled directly from github using pip:
 
 <pre>
-pip install git+https://github.com/kobylkam/RME
+pip install git+https://github.com/ModelOriented/RME
 </pre>
 
 Demo
 ---------------
 
-A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME demo explanations. Full code of an example can be found in [notebooks](https://github.com/kobylkam/RME/blob/master/notebooks/Demo_RME.ipynb) folder.
+A machine learning model predicting the sentiment of the sentence (whether it is positive or negative) serves as an example of RME demo explanations. Full code of an example can be found in [notebooks](https://github.com/ModelOriented/RME/blob/master/notebooks/Demo_RME.ipynb) folder.
 
 ### 1. Creating an explainer 
 
@@ -78,6 +78,6 @@ e.plot_local_perturbations(type='probability_change', title = 'Demo explanation,
 Documentation
 ---------------
 
-For all the features the package offers, see the [documentation](https://kobylkam.github.io/RME/documentation/).
+For all the features the package offers, see the [documentation](https://ModelOriented.github.io/RME/documentation/).
 
 The package was created as a part of master's diploma thesis at Warsaw University of Technology at Faculty of Mathematics and Information Science by Mateusz Kobyłka.
