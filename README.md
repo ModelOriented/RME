@@ -80,4 +80,4 @@ Documentation
 
 For all the features the package offers, see the [documentation](https://ModelOriented.github.io/RME/documentation/).
 
-The package was created as a part of master's diploma thesis at Warsaw University of Technology at Faculty of Mathematics and Information Science by Mateusz Kobyłka.
+The package was created as a part of master's diploma thesis at [Warsaw University of Technology at Faculty of Mathematics and Information Science](https://ww2.mini.pw.edu.pl/) by [Mateusz Kobyłka](https://github.com/kobylkam).
