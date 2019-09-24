@@ -1,6 +1,6 @@
 # RME <img src="docs/README_files/drwhy_RME_website.png" align="right" width="150"/>
 
-[![Build Status](https://travis-ci.org/kobylkam/RME.svg?branch=master)](https://travis-ci.org/kobylkam/RME)
+[![Build Status](https://travis-ci.org/ModelOriented/RME.svg?branch=master)](https://travis-ci.org/ModelOriented/RME)
 [![codecov](https://codecov.io/gh/kobylkam/RME/branch/master/graph/badge.svg)](https://codecov.io/gh/kobylkam/RME)
 
 Overview
